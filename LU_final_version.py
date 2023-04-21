@@ -1,6 +1,7 @@
 """LU base component - based on 00_LU_base_v2
 Adding instructions function and further text decoration
 """
+
 import random
 
 
@@ -8,12 +9,8 @@ import random
 def yes_no(question_text):
     while True:
 
-
-
-
         # Ask the user if they have played before
         answer = input(question_text).lower()
-
 
         # If they say yes, output 'Program Continues'
         if answer == "yes" or answer == "y":
@@ -37,7 +34,7 @@ def instructions():
     print("Choosing a starting amount to play with - must be between $1 and $10")
     print()
     print("Then press <enter> to play. You will get a random token which might"
-        " be a horse, a zebra, a donkey, or a unicorn")
+          " be a horse, a zebra, a donkey, or a unicorn")
     print()
     print("It costs $1 to play each round but, depending on your prize, you "
           "could win some of your money back. These are the payout amounts: \n"
@@ -69,6 +66,7 @@ def num_check(question, low, high):
 
         except ValueError:
             print(error)
+
 
 # Function to generate random token
 def generate_token(balance):
@@ -112,14 +110,14 @@ def generate_token(balance):
                 print(formatter("H", "You got a horse"))
                 print()
 
-       # output
+        # output
         print(f"Your balance is now: ${balance:.2f}")
         if balance < 1:
-           print("\nSorry but you have run out of money")
-           play_again = "x"
+            print("\nSorry but you have run out of money")
+            play_again = "x"
         else:
-           play_again = input("\nDo you want to play another round?\n<enter> to play "
-                              "again or 'X' to exit "). lower()
+            play_again = input("\nDo you want to play another round?\n<enter> to play "
+                               "again or 'X' to exit "). lower()
         print()
     return balance
 
